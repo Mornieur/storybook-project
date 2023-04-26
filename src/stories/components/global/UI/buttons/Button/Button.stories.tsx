@@ -130,8 +130,8 @@ export const Primary: Story = {
 
 export const Secundário: Story = {
   args: {
-    theme: "delete",
-    children: "Apagar",
+    theme: "secondary",
+    children: "Secundário",
   },
   argTypes: {
     onClick: {
