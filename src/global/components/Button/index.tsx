@@ -4,7 +4,7 @@ import { themeBtn } from "./theme";
 
 export interface IButton {
   children: ReactNode;
-  theme: "primary" | "secondary" | "save" | "exclude" | "edit";
+  theme: "primary" | "secondary" | "save" | "delete" | "edit";
   onClick?: (e: MouseEvent<HTMLElement>) => void;
   className?: string;
   type?: "submit" | "button" | "reset";
