@@ -2,7 +2,7 @@ enum Themes {
   "primary",
   "secondary",
   "save",
-  "exclude",
+  "delete",
   "edit",
 }
 
@@ -30,7 +30,7 @@ export const themeBtn = {
     color: "var(--white-color)",
     border: "var(--edit-color)",
   },
-  exclude: {
+  delete: {
     backgroundColor: "var(--delete-color)",
     color: "var(--white-color)",
     border: "var(--delete-color)",
@@ -50,7 +50,7 @@ export const iconTheme = {
   edit: {
     fill: "var(--white-color)",
   },
-  exclude: {
+  delete: {
     fill: "var(--white-color)",
   },
 };
