@@ -11,7 +11,7 @@
 
 ## Descrição
 
-A aplicação demonstra um componente de loading e diversos botões, com o intuito de testes com a biblioteca storybook.
+A aplicação demonstra um componente de loading e diversos botões, com o intuito de criar testes e documentação com a biblioteca storybook.
 
 ## Tecnologias Utilizadas
 
