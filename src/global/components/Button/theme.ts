@@ -1,54 +1,56 @@
 enum Themes {
-  'primary',
-  'secondary',
-  'save',
-  'exclude',
-  'edit',
+  "primary",
+  "secondary",
+  "save",
+  "exclude",
+  "edit",
 }
 
+color: {
+}
 
 export const themeBtn = {
   primary: {
-    backgroundColor: 'var(--blue-dark)',
-    color: 'var(--white)',
-    border: 'var(--blue-dark)',
+    backgroundColor: "var(--primary-color)",
+    color: "var(--white-color)",
+    border: "var(--primary-color)",
   },
   secondary: {
-    backgroundColor: 'var(--white)',
-    color: 'var(--blue-dark)',
-    border: 'var(--blue-dark)',
+    backgroundColor: "var(--white-color)",
+    color: "var(--primary-color)",
+    border: "var(--primary-color)",
   },
   save: {
-    backgroundColor: 'var(--green-dark)',
-    color: 'var(--white)',
-    border: 'var(--green-dark)',
+    backgroundColor: "var(--saved-color)",
+    color: "var(--white-color)",
+    border: "var(--saved-color)",
   },
   edit: {
-    backgroundColor: 'var(--blue-light)',
-    color: 'var(--white)',
-    border: 'var(--blue-light)',
+    backgroundColor: "var(--edit-color)",
+    color: "var(--white-color)",
+    border: "var(--edit-color)",
   },
   exclude: {
-    backgroundColor: 'var(--red-dark)',
-    color: 'var(--white)',
-    border: 'var(--red-dark)',
+    backgroundColor: "var(--delete-color)",
+    color: "var(--white-color)",
+    border: "var(--delete-color)",
   },
 };
 
 export const iconTheme = {
   primary: {
-    fill: 'var(--white)',
+    fill: "var(--white-color)",
   },
   secondary: {
-    fill: 'var(--blue-dark)',
+    fill: "var(--edit-color)",
   },
   save: {
-    fill: 'var(--white)',
+    fill: "var(--white-color)",
   },
   edit: {
-    fill: 'var(--white)',
+    fill: "var(--white-color)",
   },
   exclude: {
-    fill: 'var(--white)',
+    fill: "var(--white-color)",
   },
 };
