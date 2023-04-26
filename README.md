@@ -1,4 +1,13 @@
-# Storybook Project
+<div align='center'>
+  <h1 >Storybook Project</h1>
+</div>
+
+<br />
+
+<div align='center'>
+
+  <img src="./src/assets/storybook-project.png" alt='project image' width='600'  />
+</div>
 
 Um projeto para teste de documentação de componentes.
 
