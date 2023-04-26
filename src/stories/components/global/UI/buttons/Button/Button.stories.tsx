@@ -8,31 +8,31 @@ import { expect } from "@storybook/jest";
 import { within, userEvent } from "@storybook/testing-library";
 import React, { useEffect } from "react";
 
-const themeBtnTest = {
+export const themeBtnTest = {
   primary: {
-    backgroundColor: "var(--blue-dark)",
-    color: "var(--white)",
-    border: "var(--blue-dark)",
+    backgroundColor: "var(--primary-color)",
+    color: "var(--white-color)",
+    border: "var(--primary-color)",
   },
   secondary: {
-    backgroundColor: "var(--white)",
-    color: "var(--blue-dark)",
-    border: "var(--blue-dark)",
+    backgroundColor: "var(--white-color)",
+    color: "var(--primary-color)",
+    border: "var(--primary-color)",
   },
   save: {
-    backgroundColor: "var(--green-dark)",
-    color: "var(--white)",
-    border: "var(--green-dark)",
+    backgroundColor: "var(--saved-color)",
+    color: "var(--white-color)",
+    border: "var(--saved-color)",
   },
   edit: {
-    backgroundColor: "var(--blue-light)",
-    color: "var(--white)",
-    border: "var(--blue-light)",
+    backgroundColor: "var(--edit-color)",
+    color: "var(--white-color)",
+    border: "var(--edit-color)",
   },
-  exclude: {
-    backgroundColor: "var(--red-dark)",
-    color: "var(--white)",
-    border: "var(--red-dark)",
+  delete: {
+    backgroundColor: "var(--delete-color)",
+    color: "var(--white-color)",
+    border: "var(--delete-color)",
   },
 };
 
@@ -108,17 +108,88 @@ const button: Meta<typeof Button> = {
 export default button;
 type Story = StoryObj<typeof Button>;
 
-export const Enviar: Story = {
+export const Primary: Story = {
   args: {
     theme: "primary",
-    children: "Enviar",
+    children: "Primário",
+  },
+  argTypes: {
+    onClick: {
+      control: {
+        type: "object",
+      },
+      table: {
+        category: "Events",
+        action: "clicked",
+        description: "optional onClick ``` (() => void) ```",
+        default: "false",
+      },
+    },
+  },
+};
+
+export const Secundário: Story = {
+  args: {
+    theme: "delete",
+    children: "Apagar",
+  },
+  argTypes: {
+    onClick: {
+      control: {
+        type: "object",
+      },
+      table: {
+        category: "Events",
+        action: "clicked",
+        description: "optional onClick ``` (() => void) ```",
+        default: "false",
+      },
+    },
   },
 };
 
 export const Deletar: Story = {
   args: {
-    theme: "primary",
+    theme: "delete",
     children: "Apagar",
+  },
+  argTypes: {
+    onClick: {
+      control: {
+        type: "object",
+      },
+      table: {
+        category: "Events",
+        action: "clicked",
+        description: "optional onClick ``` (() => void) ```",
+        default: "false",
+      },
+    },
+  },
+};
+export const Editar: Story = {
+  args: {
+    theme: "edit",
+    children: "Editar",
+  },
+  argTypes: {
+    onClick: {
+      control: {
+        type: "object",
+      },
+      table: {
+        category: "Events",
+        action: "clicked",
+        description: "optional onClick ``` (() => void) ```",
+        default: "false",
+      },
+    },
+  },
+};
+export const Salvar: Story = {
+  args: {
+    theme: "save",
+    children: "Salvar",
   },
   argTypes: {
     onClick: {
