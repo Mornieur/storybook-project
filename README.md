@@ -9,8 +9,6 @@
   <img src="./src/assets/storybook-project.png" alt='project image' width='600'  />
 </div>
 
-Um projeto para teste de documentação de componentes.
-
 ## Descrição
 
 A aplicação demonstra um componente de loading e diversos botões, com o intuito de testes com a biblioteca storybook.
