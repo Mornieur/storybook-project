@@ -8,7 +8,7 @@ export const ButtonsComponent = () => {
       <Button theme="secondary">Secondary</Button>
       <Button theme="save">Save</Button>
       <Button theme="edit">Edit</Button>
-      <Button theme="exclude">Delete</Button>
+      <Button theme="delete">Delete</Button>
     </S.Container>
   );
 };
