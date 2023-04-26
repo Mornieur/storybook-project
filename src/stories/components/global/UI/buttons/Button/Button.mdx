@@ -5,7 +5,7 @@ import * as ButtonStories from "./Button.stories";
 ## Button
 
 <Canvas
-  of={ButtonStories.Enviar}
+  of={ButtonStories.Primary}
   sourceState="hidden"
 
 additionalActions={[
@@ -29,30 +29,50 @@ O `Button` é um componente de botão reutilizável usado para ações diversas.
 
 <br />
 
-#### Botão padrão
+#### Botão padrão 1
 
 ```jsx
 <Container themeBtn={themeBtnTest.primary}>
   <SimpleContainer>
-    <p>Default</p>
+    <p>Padrão 1</p>
   </SimpleContainer>
 </Container>
 ```
 
-#### Botão Enviar
+#### Botão padrão 2
 
 ```jsx
-<Container themeBtn={themeBtnTest.primary}>
+<Container themeBtn={themeBtnTest.secondary}>
   <SimpleContainer>
-    <p>Enviar</p>
+    <p>Padrão 2</p>
   </SimpleContainer>
 </Container>
 ```
 
-#### Botão "Apagar"
+#### Botão Salvar
 
 ```jsx
-<Container themeBtn={themeBtnTest.primary} onClick={(value: any) => {}}>
+<Container themeBtn={themeBtnTest.save}>
+  <SimpleContainer>
+    <p>Salvar</p>
+  </SimpleContainer>
+</Container>
+```
+
+#### Botão Editar
+
+```jsx
+<Container themeBtn={themeBtnTest.edit}>
+  <SimpleContainer>
+    <p>Editar</p>
+  </SimpleContainer>
+</Container>
+```
+
+#### Botão Apagar
+
+```jsx
+<Container themeBtn={themeBtnTest.delete} onClick={(value: any) => {}}>
   <SimpleContainer>
     <p>Apagar</p>
   </SimpleContainer>
@@ -73,10 +93,10 @@ O `Button` é um componente de botão reutilizável usado para ações diversas.
 
 | Nome      | Descrição                                     |
 | --------- | --------------------------------------------- |
-| primary   | Botão padrão do projeto, com fundo azul       |
+| primary   | Botão padrão do projeto, com fundo cinza      |
 | secondary | Botão secundário do projeto, com fundo branco |
 | save      | Botão de salvar, com fundo verde              |
 | edit      | Botão de editar, com fundo azul claro         |
-| exclude   | Botão de excluir, com fundo vermelho escuro   |
+| delete    | Botão de excluir, com fundo vermelho escuro   |
 
 </div>
