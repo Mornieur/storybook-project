@@ -1,5 +1,7 @@
 import type { StorybookConfig } from "@storybook/nextjs";
 import path from "path";
+import "storybook-vscode-component/register";
+
 const config: StorybookConfig = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
 
@@ -23,6 +25,20 @@ const config: StorybookConfig = {
     "@storybook/addon-mdx-gfm",
     "storybook-addon-designs",
     "@storybook/addon-highlight",
+    "storybook-css-modules",
+    "storybook-addon-gatsby",
+    "storybook-addon-jarle-monaco",
+    "storybook-addon-swc",
+    // "@whitespace/storybook-addon-html",
+    // "storybook-addon-root-attribute/register",
+    // "storybook-addon-custom-event-broadcaster/dist",
+    //"storybook-vscode-component/register",
+    // "@geometricpanda/storybook-addon-iframe",
+
+    //'@bbbtech/storybook-formik/register'
+    // "@storybook/addon-google-analytics",
+    // "storybook-addon-live-examples",
+
     {
       name: "@storybook/addon-storysource",
       options: {

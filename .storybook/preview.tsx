@@ -22,6 +22,8 @@ import {
   Stories,
 } from "@storybook/blocks";
 import { initialize } from "msw-storybook-addon";
+import { wd } from "paths.macro";
+import { themes } from "@storybook/theming";
 
 initialize({
   onUnhandledRequest: "bypass",
@@ -76,6 +78,11 @@ const preview: Preview = {
     },
   },
   parameters: {
+    // storySource: {
+    //   repository: "https://github.com/Mornieur/storybook-project",
+    //   workingDir: wd || "/Usr/vilva/Desktop/project-name",
+    //   branch: "main",
+    // },
     docs: {
       page: () => (
         <>
@@ -87,6 +94,7 @@ const preview: Preview = {
           <Stories />
         </>
       ),
+      // theme: themes.dark,
     },
     msw: {
       handlers: {
