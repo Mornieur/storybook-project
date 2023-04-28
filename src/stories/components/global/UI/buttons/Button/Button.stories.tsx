@@ -7,34 +7,7 @@ import { linkTo } from "@storybook/addon-links";
 import { expect } from "@storybook/jest";
 import { within, userEvent } from "@storybook/testing-library";
 import React, { useEffect } from "react";
-
-export const themeBtnTest = {
-  primary: {
-    backgroundColor: "var(--primary-color)",
-    color: "var(--white-color)",
-    border: "var(--primary-color)",
-  },
-  secondary: {
-    backgroundColor: "var(--white-color)",
-    color: "var(--primary-color)",
-    border: "var(--primary-color)",
-  },
-  save: {
-    backgroundColor: "var(--saved-color)",
-    color: "var(--white-color)",
-    border: "var(--saved-color)",
-  },
-  edit: {
-    backgroundColor: "var(--edit-color)",
-    color: "var(--white-color)",
-    border: "var(--edit-color)",
-  },
-  delete: {
-    backgroundColor: "var(--delete-color)",
-    color: "var(--white-color)",
-    border: "var(--delete-color)",
-  },
-};
+import { themeBtnTest } from "../../../../../styles/index";
 
 const button: Meta<typeof Button> = {
   title: "Global/components/Button",
@@ -69,6 +42,26 @@ const button: Meta<typeof Button> = {
       type: "figma",
       url: "https://www.figma.com/",
     },
+    // FAZ UM EXEMPLO CUSTOMIZADO
+
+    // customEventPanel: [
+    //   {
+    //     eventName: "event:example",
+    //   },
+    //   {
+    //     eventName: "my:event",
+    //     eventData: {
+    //       opt: 23,
+    //     },
+    //     selector: ".selector",
+    //   },
+    //   {
+    //     eventName: "my:otherevent",
+    //     eventData: {
+    //       foo: 23,
+    //     },
+    //   },
+    // ],
   },
   decorators: [
     (story, context) => {
