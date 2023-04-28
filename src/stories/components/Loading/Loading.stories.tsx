@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Loading } from "../../../global/components/Animation";
 import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
-import { withKnobs } from "@storybook/addon-knobs";
+import { withKnobs, text, boolean, number } from "@storybook/addon-knobs";
 
 import React, { useEffect } from "react";
 
@@ -120,15 +120,50 @@ const meta: Meta<typeof Loading> = {
       control: { type: "select" },
     },
   },
+  // parameters: {
+  //   // viewport: {
+  //   //   viewports: { ...INITIAL_VIEWPORTS, ...customViewports },
+  //   //   defaultViewport: "iPad",
+  //   // },
+
+  // },
+
   parameters: {
-    // viewport: {
-    //   viewports: { ...INITIAL_VIEWPORTS, ...customViewports },
-    //   defaultViewport: "iPad",
-    // },
+    customEventPanel: [
+      {
+        eventName: "event:example",
+      },
+      {
+        eventName: "my:event",
+        eventData: {
+          opt: 23,
+        },
+        selector: ".selector",
+      },
+      {
+        eventName: "my:otherevent",
+        eventData: {
+          foo: 23,
+        },
+      },
+    ],
   },
 };
 
+// export const withAButton = () => (
+//   <button disabled={boolean("Disabled", false)}>
+//     {text("Label", "Hello Storybook")}
+//   </button>
+// );
+// export const asDynamicVariables = () => {
+//   const name = text("Name", "James");
+//   const age = number("Age", 35);
+//   const content = `I am ${name} and I'm ${age} years old.`;
+
+//   return <div>{content}</div>;
+// };
 export default meta;
+
 type Story = StoryObj<typeof Loading>;
 
 export const Primary: Story = {
