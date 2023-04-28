@@ -2,9 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Loading } from "../../../global/components/Animation";
 import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
 import { withKnobs, text, boolean, number } from "@storybook/addon-knobs";
-
 import React, { useEffect } from "react";
-
 import {
   AiOutlineArrowDown,
   AiOutlineArrowLeft,
@@ -12,6 +10,7 @@ import {
   AiOutlineArrowUp,
 } from "react-icons/ai";
 import styled from "styled-components";
+import { Container } from "../../styles/index";
 
 const getCaptionForLocale = (locale: any) => {
   switch (locale) {
@@ -64,13 +63,6 @@ const meta: Meta<typeof Loading> = {
   // decorators: [withKnobs],
   decorators: [
     (Story) => {
-      const Container = styled.div`
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      `;
       return (
         <Container>
           <Story />
