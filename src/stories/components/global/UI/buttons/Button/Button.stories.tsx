@@ -29,6 +29,21 @@ const button: Meta<typeof Button> = {
         description: "optional onClick ``` (() => void) ```",
       },
     },
+    onKeyDown: {
+      control: {
+        options: {
+          type: ["ola", "alo"],
+        },
+        action: "clicked",
+        type: "object",
+        description: "optional onClick ``` (() => void) ```",
+      },
+      table: {
+        category: "Events",
+        action: "clicked",
+        description: "optional onClick ``` (() => void) ```",
+      },
+    },
     children: {
       control: "text",
     },
