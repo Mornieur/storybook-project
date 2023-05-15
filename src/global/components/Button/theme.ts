@@ -6,9 +6,6 @@ enum Themes {
   "edit",
 }
 
-color: {
-}
-
 export const themeBtn = {
   primary: {
     backgroundColor: "var(--primary-color)",

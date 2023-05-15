@@ -38,7 +38,6 @@ const config: StorybookConfig = {
     //'@bbbtech/storybook-formik/register'
     // "@storybook/addon-google-analytics",
     // "storybook-addon-live-examples",
-
     {
       name: "@storybook/addon-storysource",
       options: {
