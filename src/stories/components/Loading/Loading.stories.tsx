@@ -11,6 +11,8 @@ import {
 } from "react-icons/ai";
 import styled from "styled-components";
 import { Container } from "../../styles/index";
+import { userEvent, within } from "@storybook/testing-library";
+import { expect } from "@storybook/jest";
 
 const getCaptionForLocale = (locale: any) => {
   switch (locale) {
@@ -159,6 +161,10 @@ export default meta;
 type Story = StoryObj<typeof Loading>;
 
 export const Primary: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await expect(canvas.getByText("Carregando")).toBeInTheDocument();
+  },
   args: {
     background: "white",
     label: "Carregando",
@@ -218,6 +224,11 @@ export const Primary: Story = {
 // Primary.storyName = "Primary";
 
 export const Secondary: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    await expect(canvas.getByText("Carregando")).toBeInTheDocument();
+  },
   args: {
     ...Primary.args,
     primary: false,
@@ -231,17 +242,12 @@ export const Secondary: Story = {
   // decorators : [ story => ({story()})]
 };
 
-// Secondary.storyName = "Secondary";
-
-export const StoryWithLocale = (
-  {},
-  { globals: { locale } }: { globals: { locale: string } }
-) => {
-  const caption = getCaptionForLocale(locale);
-  return <p>{caption}</p>;
-};
-
 export const Unchecked: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    await expect(canvas.getByText("Unchecked")).toBeInTheDocument();
+  },
   args: {
     label: "Unchecked",
   },

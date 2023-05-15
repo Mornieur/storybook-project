@@ -117,6 +117,12 @@ export default button;
 type Story = StoryObj<typeof Button>;
 
 export const Primary: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    await userEvent.click(canvas.getByRole("button"));
+    await expect(canvas.getByText("Primário")).toBeInTheDocument();
+  },
   args: {
     theme: "primary",
     children: "Primário",
@@ -137,6 +143,12 @@ export const Primary: Story = {
 };
 
 export const Secundário: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    await userEvent.click(canvas.getByRole("button"));
+    await expect(canvas.getByText("Secundário")).toBeInTheDocument();
+  },
   args: {
     theme: "secondary",
     children: "Secundário",
@@ -157,6 +169,12 @@ export const Secundário: Story = {
 };
 
 export const Deletar: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    await userEvent.click(canvas.getByRole("button"));
+    await expect(canvas.getByText("Apagar")).toBeInTheDocument();
+  },
   args: {
     theme: "delete",
     children: "Apagar",
@@ -176,6 +194,12 @@ export const Deletar: Story = {
   },
 };
 export const Editar: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    await userEvent.click(canvas.getByRole("button"));
+    await expect(canvas.getByText("Editar")).toBeInTheDocument();
+  },
   args: {
     theme: "edit",
     children: "Editar",
@@ -195,6 +219,12 @@ export const Editar: Story = {
   },
 };
 export const Salvar: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    await userEvent.click(canvas.getByRole("button"));
+    await expect(canvas.getByText("Salvar")).toBeInTheDocument();
+  },
   args: {
     theme: "save",
     children: "Salvar",
@@ -212,12 +242,4 @@ export const Salvar: Story = {
       },
     },
   },
-};
-
-export const AsDynamicVariables = () => {
-  const name = text("Name", "James");
-  const age = number("Age", 35);
-  const content = `I am ${name} and I'm ${age} years old.`;
-
-  return <div>{content}</div>;
 };
