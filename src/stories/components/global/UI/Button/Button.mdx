@@ -1,0 +1,102 @@
+import { Meta } from "@storybook/addon-docs";
+import { ArgTypes, Story, Canvas } from "@storybook/blocks";
+import * as ButtonStories from "./Button.stories";
+
+## Button
+
+<Canvas
+  of={ButtonStories.Primary}
+  sourceState="hidden"
+
+additionalActions={[
+{
+title: 'Open in Github',
+onClick: () => {
+window.open(
+'https://github.com/Mornieur/storybook-project.git',
+'_blank'
+);
+},
+},
+]}
+/>
+
+<Meta title="global/components/Button" of={ButtonStories} />
+
+O `Button` é um componente de botão reutilizável usado para ações diversas.
+
+### Exemplos:
+
+<br />
+
+#### Botão padrão 1
+
+```jsx
+<Container themeBtn={themeBtnTest.primary}>
+  <SimpleContainer>
+    <p>Padrão 1</p>
+  </SimpleContainer>
+</Container>
+```
+
+#### Botão padrão 2
+
+```jsx
+<Container themeBtn={themeBtnTest.secondary}>
+  <SimpleContainer>
+    <p>Padrão 2</p>
+  </SimpleContainer>
+</Container>
+```
+
+#### Botão Salvar
+
+```jsx
+<Container themeBtn={themeBtnTest.save}>
+  <SimpleContainer>
+    <p>Salvar</p>
+  </SimpleContainer>
+</Container>
+```
+
+#### Botão Editar
+
+```jsx
+<Container themeBtn={themeBtnTest.edit}>
+  <SimpleContainer>
+    <p>Editar</p>
+  </SimpleContainer>
+</Container>
+```
+
+#### Botão Apagar
+
+```jsx
+<Container themeBtn={themeBtnTest.delete} onClick={(value: any) => {}}>
+  <SimpleContainer>
+    <p>Apagar</p>
+  </SimpleContainer>
+</Container>
+```
+
+## Parâmetros
+
+##### Parâmetros disponíveis para personalizar o componente:
+
+<ArgTypes of={ButtonStories} />
+
+### Referência de Botões
+
+###### A tabela abaixo descreve os temas de botão disponíveis:
+
+<div style={{ display: 'flex', justifyContent: 'center' }}>
+
+| Nome      | Descrição                                     |
+| --------- | --------------------------------------------- |
+| primary   | Botão padrão do projeto, com fundo cinza      |
+| secondary | Botão secundário do projeto, com fundo branco |
+| save      | Botão de salvar, com fundo verde              |
+| edit      | Botão de editar, com fundo azul claro         |
+| delete    | Botão de excluir, com fundo vermelho escuro   |
+
+</div>
