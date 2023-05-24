@@ -26,6 +26,7 @@ export const TextAnimation: React.FC<ITextAnimation> = ({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={transitionDuration(isOpen)}
+          style={{ color: '#000' }}
         >
           {text}
         </motion.h3>
