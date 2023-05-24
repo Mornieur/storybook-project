@@ -1,68 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { TextAnimation } from '../../../../../global/components/TextAnimation';
-import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
-import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
-import React, { useEffect } from 'react';
-import {
-  AiOutlineArrowDown,
-  AiOutlineArrowLeft,
-  AiOutlineArrowRight,
-  AiOutlineArrowUp,
-} from 'react-icons/ai';
-import styled from 'styled-components';
+import React from 'react';
+import { generateLivePreviewStory } from 'storybook-addon-jarle-monaco';
 import { Container } from '../../../../styles';
-import { userEvent, within } from '@storybook/testing-library';
+import { within } from '@storybook/testing-library';
 import { expect } from '@storybook/jest';
-
-const getCaptionForLocale = (locale: any) => {
-  switch (locale) {
-    case 'es':
-      return 'Hola!';
-    case 'fr':
-      return 'Bonjour!';
-    case 'kr':
-      return '안녕하세요!';
-    case 'zh':
-      return '你好!';
-    default:
-      return 'Hello!';
-  }
-};
-
-const arrows = {
-  AiOutlineArrowDown,
-  AiOutlineArrowLeft,
-  AiOutlineArrowRight,
-  AiOutlineArrowUp,
-};
-
-const customViewports = {
-  MOBILE: {
-    name: 'Cellphone Example',
-    styles: {
-      width: '415px',
-      height: '915px',
-    },
-  },
-  IPAD: {
-    name: 'iPad Example',
-    styles: {
-      width: '810px',
-      height: '1080px',
-    },
-  },
-  DESKTOP: {
-    name: 'Desktop Example',
-    styles: {
-      width: '1300px',
-      height: '1080px',
-    },
-  },
-};
 
 const meta: Meta<typeof TextAnimation> = {
   title: 'Global/components/TextAnimation',
-  // decorators: [withKnobs],
   decorators: [
     (Story) => {
       return (
@@ -76,15 +21,9 @@ const meta: Meta<typeof TextAnimation> = {
   component: TextAnimation,
   argTypes: {
     text: { control: 'text' },
+    type: { control: 'text' },
+    isOpen: { control: 'boolean' },
   },
-  // parameters: {
-  //   // viewport: {
-  //   //   viewports: { ...INITIAL_VIEWPORTS, ...customViewports },
-  //   //   defaultViewport: "iPad",
-  //   // },
-
-  // },
-
   parameters: {
     customEventPanel: [
       {
@@ -107,18 +46,6 @@ const meta: Meta<typeof TextAnimation> = {
   },
 };
 
-// export const withAButton = () => (
-//   <button disabled={boolean("Disabled", false)}>
-//     {text("Label", "Hello Storybook")}
-//   </button>
-// );
-// export const asDynamicVariables = () => {
-//   const name = text("Name", "James");
-//   const age = number("Age", 35);
-//   const content = `I am ${name} and I'm ${age} years old.`;
-
-//   return <div>{content}</div>;
-// };
 export default meta;
 
 type Story = StoryObj<typeof TextAnimation>;
@@ -131,16 +58,13 @@ export const Title: Story = {
   args: {
     type: 'title',
     text: 'Text Example',
+    isOpen: true,
   },
 
   parameters: {
     nextjs: {
       appDirectory: true,
     },
-    // viewport: {
-    //   defaultViewport: "iPad",
-    //   viewport: { INITIAL_VIEWPORTS, ...customViewports },
-    // },
     viewport: {
       defaultViewport: 'responsive',
       viewports: {
@@ -183,3 +107,19 @@ export const Title: Story = {
     },
   },
 };
+
+// use generateLivePreviewStory HoC to generate live preview
+// export const TextAnimationEdit = generateLivePreviewStory({
+//   code: `() => <TextAnimation type="title" isOpen={true} text="Text Example"  />`,
+//   scope: {
+//     TextAnimation,
+//     foo: 'bar',
+//   },
+// });
+
+// // use LivePreview alone, you need to set showEditor manually
+// LiveEdit.parameters = {
+//   liveEdit: {
+//     showEditor: true,
+//   },
+// };
