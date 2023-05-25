@@ -43,9 +43,10 @@
     "react-dom": "18.2.0",
     "react-i18next": "^12.2.2",
     "react-icons": "^4.7.1",
+    "sharp": "^0.32.1",
     "storybook-addon-custom-event-broadcaster": "^1.1.0",
     "storybook-dark-mode": "^3.0.0",
-    "styled-components": "^5.3.6",
+    "styled-components": "5.3.6",
     "ts-debounce": "^4.0.0",
     "uuid": "^9.0.0"
   },
