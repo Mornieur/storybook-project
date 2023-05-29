@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { TextAnimation } from '../../../../../global/components/TextAnimation';
 import React from 'react';
-import { generateLivePreviewStory } from 'storybook-addon-jarle-monaco';
 import { Container } from '../../../../styles';
 import { within } from '@storybook/testing-library';
 import { expect } from '@storybook/jest';
+import { globalViewports } from '../../../../styles/index';
 
 const meta: Meta<typeof TextAnimation> = {
   title: 'Global/components/TextAnimation',
@@ -68,58 +68,8 @@ export const Title: Story = {
     viewport: {
       defaultViewport: 'responsive',
       viewports: {
-        mobileS: {
-          name: 'Mobile S',
-          styles: {
-            width: '320px',
-            height: '568px',
-          },
-        },
-        mobileM: {
-          name: 'Mobile M',
-          styles: {
-            width: '375px',
-            height: '667px',
-          },
-        },
-        mobileL: {
-          name: 'Mobile L',
-          styles: {
-            width: '425px',
-            height: '812px',
-          },
-        },
-        tablet: {
-          name: 'Tablet',
-          styles: {
-            width: '768px',
-            height: '1024px',
-          },
-        },
-        desktop: {
-          name: 'Desktop',
-          styles: {
-            width: '1440px',
-            height: '900px',
-          },
-        },
+        globalViewports,
       },
     },
   },
 };
-
-// use generateLivePreviewStory HoC to generate live preview
-// export const TextAnimationEdit = generateLivePreviewStory({
-//   code: `() => <TextAnimation type="title" isOpen={true} text="Text Example"  />`,
-//   scope: {
-//     TextAnimation,
-//     foo: 'bar',
-//   },
-// });
-
-// // use LivePreview alone, you need to set showEditor manually
-// LiveEdit.parameters = {
-//   liveEdit: {
-//     showEditor: true,
-//   },
-// };

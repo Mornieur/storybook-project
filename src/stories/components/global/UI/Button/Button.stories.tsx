@@ -13,7 +13,6 @@ const button: Meta<typeof Button> = {
   title: 'Global/components/Button',
   component: Button,
   argTypes: {
-    // onClick: { action: 'clicked' },
     onClick: {
       control: {
         options: {
@@ -57,26 +56,6 @@ const button: Meta<typeof Button> = {
       type: 'figma',
       url: 'https://www.figma.com/',
     },
-    // FAZ UM EXEMPLO CUSTOMIZADO
-
-    // customEventPanel: [
-    //   {
-    //     eventName: "event:example",
-    //   },
-    //   {
-    //     eventName: "my:event",
-    //     eventData: {
-    //       opt: 23,
-    //     },
-    //     selector: ".selector",
-    //   },
-    //   {
-    //     eventName: "my:otherevent",
-    //     eventData: {
-    //       foo: 23,
-    //     },
-    //   },
-    // ],
   },
   decorators: [
     (story, context) => {
