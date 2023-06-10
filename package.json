@@ -53,6 +53,7 @@
   "devDependencies": {
     "@babel/core": "^7.21.4",
     "@mdx-js/loader": "^2.3.0",
+    "@pluralsight/ps-design-system-storybook-addon-center": "^5.1.8",
     "@storybook/addon-a11y": "^7.0.10",
     "@storybook/addon-actions": "^7.0.7",
     "@storybook/addon-console": "^1.2.3",
@@ -65,7 +66,7 @@
     "@storybook/addon-knobs": "^7.0.0",
     "@storybook/addon-links": "^7.0.7",
     "@storybook/addon-mdx-gfm": "^7.0.7",
-    "@storybook/addon-storyshots": "^7.0.7",
+    "@storybook/addon-storyshots": "^7.0.20",
     "@storybook/addon-storysource": "^7.0.7",
     "@storybook/addon-styling": "^1.0.1",
     "@storybook/addon-viewport": "^7.0.7",
