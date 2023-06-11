@@ -31,6 +31,11 @@ A aplicação demonstra um componente de loading e diversos botões, com o intui
 4. Para executar os testes, execute `npm run test` ou `yarn test`.
 5. Para visualizar os componentes com o Storybook, execute `npm run storybook` ou `yarn storybook`.
 
+## Como Rodar os Testes
+
+1. Na pasta raiz do projeto, execute `npm test` ou `yarn test`.
+2. Os testes serão rodados e renderizados no terminal do seu compilador. 
+
 ## Como Visualizar a Documentação do Storybook
 
 1. Na pasta raiz do projeto, execute `npm storybook` ou `yarn storybook`.
