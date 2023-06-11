@@ -59,19 +59,10 @@ const button: Meta<typeof Button> = {
   },
   decorators: [
     (story, context) => {
-      const {
-        form,
-        type,
-        theme,
-        className,
-        onClick,
-        disabled,
-        onKeyDown,
-        children,
-      } = context.args;
+      const { type, theme, className, onClick, disabled, onKeyDown, children } =
+        context.args;
       return (
         <S.Container
-          form={form}
           type={type ? type : 'button'}
           themeBtn={themeBtnTest[theme]}
           className={className ? className : ''}
