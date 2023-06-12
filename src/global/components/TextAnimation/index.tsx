@@ -4,13 +4,13 @@ import * as S from './style';
 
 interface ITextAnimation {
   type: 'title' | 'text';
-  isOpen: boolean;
   text: string;
+  isOpen?: boolean;
 }
 export const TextAnimation: React.FC<ITextAnimation> = ({
-  isOpen,
-  text,
-  type,
+  isOpen = false,
+  text = '',
+  type = 'text',
 }) => {
   const transitionDuration = (dropdown: boolean) => {
     return dropdown
