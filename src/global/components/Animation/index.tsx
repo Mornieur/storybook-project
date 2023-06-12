@@ -1,7 +1,7 @@
-import * as S from "./styles";
-import { motion, MotionConfig } from "framer-motion";
-import rickLoading from "../../../assets/rick-loading.png";
-import Image from "next/image";
+import * as S from './styles';
+import { motion, MotionConfig } from 'framer-motion';
+import rickLoading from '../../../assets/rick-loading.png';
+import Image from 'next/image';
 
 interface ILoading {
   label: string;
@@ -12,7 +12,7 @@ interface ILoading {
 export const Loading = ({ label, background }: ILoading) => {
   return (
     <S.Container background={background}>
-      <S.LoadingContainer>
+      <S.LoadingContainer role="loading-container">
         <MotionConfig reducedMotion="user">
           <div className="rick-container">
             <motion.div
@@ -22,7 +22,7 @@ export const Loading = ({ label, background }: ILoading) => {
               }}
               transition={{
                 duration: 2,
-                ease: "easeInOut",
+                ease: 'easeInOut',
                 times: [0, 0.2, 0.5, 0.8, 1],
                 repeat: Infinity,
                 repeatDelay: 1,
@@ -36,6 +36,7 @@ export const Loading = ({ label, background }: ILoading) => {
 
             <section>
               <motion.div
+                role="animated-element-1"
                 animate={{
                   x: 50,
                   opacity: 1,
@@ -53,6 +54,7 @@ export const Loading = ({ label, background }: ILoading) => {
                 .
               </motion.div>
               <motion.div
+                role="animated-element-2"
                 animate={{
                   x: 50,
                   opacity: 1,
@@ -70,6 +72,7 @@ export const Loading = ({ label, background }: ILoading) => {
                 .
               </motion.div>
               <motion.div
+                role="animated-element-3"
                 animate={{
                   x: 50,
                   opacity: 1,
