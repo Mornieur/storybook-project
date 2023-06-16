@@ -1,33 +1,16 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { Loading } from "../../../global/components/Animation";
-import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
-import { withKnobs, text, boolean, number } from "@storybook/addon-knobs";
-import React, { useEffect } from "react";
+import type { Meta, StoryObj } from '@storybook/react';
+import { Loading } from '../../../global/components/Animation';
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+import React from 'react';
 import {
   AiOutlineArrowDown,
   AiOutlineArrowLeft,
   AiOutlineArrowRight,
   AiOutlineArrowUp,
-} from "react-icons/ai";
-import styled from "styled-components";
-import { Container } from "../../styles/index";
-import { userEvent, within } from "@storybook/testing-library";
-import { expect } from "@storybook/jest";
-
-const getCaptionForLocale = (locale: any) => {
-  switch (locale) {
-    case "es":
-      return "Hola!";
-    case "fr":
-      return "Bonjour!";
-    case "kr":
-      return "안녕하세요!";
-    case "zh":
-      return "你好!";
-    default:
-      return "Hello!";
-  }
-};
+} from 'react-icons/ai';
+import { Container } from '../../styles/index';
+import { within } from '@storybook/testing-library';
+import { expect } from '@storybook/jest';
 
 const arrows = {
   AiOutlineArrowDown,
@@ -38,31 +21,30 @@ const arrows = {
 
 const customViewports = {
   MOBILE: {
-    name: "Cellphone Example",
+    name: 'Cellphone Example',
     styles: {
-      width: "415px",
-      height: "915px",
+      width: '415px',
+      height: '915px',
     },
   },
   IPAD: {
-    name: "iPad Example",
+    name: 'iPad Example',
     styles: {
-      width: "810px",
-      height: "1080px",
+      width: '810px',
+      height: '1080px',
     },
   },
   DESKTOP: {
-    name: "Desktop Example",
+    name: 'Desktop Example',
     styles: {
-      width: "1300px",
-      height: "1080px",
+      width: '1300px',
+      height: '1080px',
     },
   },
 };
 
 const meta: Meta<typeof Loading> = {
-  title: "Global/components/Loading",
-  // decorators: [withKnobs],
+  title: 'Global/components/Loading',
   decorators: [
     (Story) => {
       return (
@@ -75,67 +57,60 @@ const meta: Meta<typeof Loading> = {
   excludeStories: /.*Data$/,
   component: Loading,
   argTypes: {
-    label: { control: "text" },
-    advanced: { control: "boolean" },
-    margin: { control: "number", if: { arg: "advanced" } },
-    padding: { control: "number", if: { arg: "advanced" } },
-    cornerRadius: { control: "number", if: { arg: "advanced" } },
+    label: { control: 'text' },
+    advanced: { control: 'boolean' },
+    margin: { control: 'number', if: { arg: 'advanced' } },
+    padding: { control: 'number', if: { arg: 'advanced' } },
+    cornerRadius: { control: 'number', if: { arg: 'advanced' } },
     arrow: {
-      if: { arg: "advanced" },
+      if: { arg: 'advanced' },
       options: Object.keys(arrows),
       mapping: arrows,
       control: {
-        type: "select",
+        type: 'select',
         labels: {
-          ArrowUp: "Up",
-          ArrowDown: "Down",
-          ArrowLeft: "Left",
-          ArrowRight: "Right",
+          ArrowUp: 'Up',
+          ArrowDown: 'Down',
+          ArrowLeft: 'Left',
+          ArrowRight: 'Right',
         },
       },
     },
     background: {
-      control: "color",
+      control: 'color',
     },
     backgroundColor: {
-      control: "color",
+      control: 'color',
     },
-    variantColor: { control: "text" },
+    variantColor: { control: 'text' },
     variant: {
-      options: ["primary", "secondary"],
-      control: { type: "radio" },
+      options: ['primary', 'secondary'],
+      control: { type: 'radio' },
     },
     TesteRadioOne: {
-      options: ["Item One", "Item Two", "Item Three"],
-      control: { type: "select" },
+      options: ['Item One', 'Item Two', 'Item Three'],
+      control: { type: 'select' },
     },
     TesteRadioTwo: {
-      options: ["Another Item One", "Another Item Two", "Another Item Three"],
-      control: { type: "select" },
+      options: ['Another Item One', 'Another Item Two', 'Another Item Three'],
+      control: { type: 'select' },
     },
   },
-  // parameters: {
-  //   // viewport: {
-  //   //   viewports: { ...INITIAL_VIEWPORTS, ...customViewports },
-  //   //   defaultViewport: "iPad",
-  //   // },
-
-  // },
 
   parameters: {
     customEventPanel: [
       {
-        eventName: "event:example",
+        eventName: 'event:example',
       },
       {
-        eventName: "my:event",
+        eventName: 'my:event',
         eventData: {
           opt: 23,
         },
-        selector: ".selector",
+        selector: '.selector',
       },
       {
-        eventName: "my:otherevent",
+        eventName: 'my:otherevent',
         eventData: {
           foo: 23,
         },
@@ -144,18 +119,6 @@ const meta: Meta<typeof Loading> = {
   },
 };
 
-// export const withAButton = () => (
-//   <button disabled={boolean("Disabled", false)}>
-//     {text("Label", "Hello Storybook")}
-//   </button>
-// );
-// export const asDynamicVariables = () => {
-//   const name = text("Name", "James");
-//   const age = number("Age", 35);
-//   const content = `I am ${name} and I'm ${age} years old.`;
-
-//   return <div>{content}</div>;
-// };
 export default meta;
 
 type Story = StoryObj<typeof Loading>;
@@ -163,57 +126,53 @@ type Story = StoryObj<typeof Loading>;
 export const Primary: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    await expect(canvas.getByText("Carregando")).toBeInTheDocument();
+    await expect(canvas.getByText('Carregando')).toBeInTheDocument();
   },
   args: {
-    background: "white",
-    label: "Carregando",
+    background: 'white',
+    label: 'Carregando',
   },
 
   parameters: {
     nextjs: {
       appDirectory: true,
     },
-    // viewport: {
-    //   defaultViewport: "iPad",
-    //   viewport: { INITIAL_VIEWPORTS, ...customViewports },
-    // },
     viewport: {
-      defaultViewport: "responsive",
+      defaultViewport: 'responsive',
       viewports: {
         mobileS: {
-          name: "Mobile S",
+          name: 'Mobile S',
           styles: {
-            width: "320px",
-            height: "568px",
+            width: '320px',
+            height: '568px',
           },
         },
         mobileM: {
-          name: "Mobile M",
+          name: 'Mobile M',
           styles: {
-            width: "375px",
-            height: "667px",
+            width: '375px',
+            height: '667px',
           },
         },
         mobileL: {
-          name: "Mobile L",
+          name: 'Mobile L',
           styles: {
-            width: "425px",
-            height: "812px",
+            width: '425px',
+            height: '812px',
           },
         },
         tablet: {
-          name: "Tablet",
+          name: 'Tablet',
           styles: {
-            width: "768px",
-            height: "1024px",
+            width: '768px',
+            height: '1024px',
           },
         },
         desktop: {
-          name: "Desktop",
+          name: 'Desktop',
           styles: {
-            width: "1440px",
-            height: "900px",
+            width: '1440px',
+            height: '900px',
           },
         },
       },
@@ -221,13 +180,11 @@ export const Primary: Story = {
   },
 };
 
-// Primary.storyName = "Primary";
-
 export const Secondary: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
 
-    await expect(canvas.getByText("Carregando")).toBeInTheDocument();
+    await expect(canvas.getByText('Carregando')).toBeInTheDocument();
   },
   args: {
     ...Primary.args,
@@ -236,20 +193,19 @@ export const Secondary: Story = {
   parameters: {
     viewport: {
       viewport: { ...INITIAL_VIEWPORTS, ...customViewports },
-      defaultViewport: "iPad",
+      defaultViewport: 'iPad',
     },
   },
-  // decorators : [ story => ({story()})]
 };
 
 export const Unchecked: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
 
-    await expect(canvas.getByText("Unchecked")).toBeInTheDocument();
+    await expect(canvas.getByText('Unchecked')).toBeInTheDocument();
   },
   args: {
-    label: "Unchecked",
+    label: 'Unchecked',
   },
   decorators: [
     (Story) => (
