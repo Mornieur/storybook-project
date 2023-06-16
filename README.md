@@ -1,5 +1,5 @@
 <div align='center'>
-  <h1 >Storybook Project</h1>
+  <h1 >🚀 Welcome to Storybook Project!</h1>
 </div>
 
 <br />
@@ -34,12 +34,12 @@ A aplicação demonstra um componente de loading e diversos botões, com o intui
 ## Como Rodar os Testes
 
 1. Na pasta raiz do projeto, execute `npm test` ou `yarn test`.
-2. Os testes serão rodados e renderizados no terminal do seu compilador. 
+2. Os testes serão rodados e renderizados no terminal do seu compilador.
 
 ## Como Visualizar a Documentação do Storybook
 
 1. Na pasta raiz do projeto, execute `npm storybook` ou `yarn storybook`.
-2. Você será redirecionado para a página do Storybook, onde poderá navegar pelos diferentes componentes e visualizar sua documentação, exemplos e histórias. 
+2. Você será redirecionado para a página do Storybook, onde poderá navegar pelos diferentes componentes e visualizar sua documentação, exemplos e histórias.
 
 ## Como Contribuir
 
