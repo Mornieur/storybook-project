@@ -1,6 +1,6 @@
-import { Meta } from '@storybook/addon-docs'
-import { ArgTypes, Story, Canvas } from '@storybook/blocks'
-import * as LoadingStories from './Loading.stories'
+import { Meta } from '@storybook/addon-docs';
+import { ArgTypes, Story, Canvas } from '@storybook/blocks';
+import * as LoadingStories from './Loading.stories';
 
 # Loading
 
@@ -11,9 +11,9 @@ import * as LoadingStories from './Loading.stories'
     {
       title: 'Open in Github',
       onClick: () => {
-        window.open('https://github.com/Mornieur/storybook-project.git')
-      }
-    }
+        window.open('https://github.com/Mornieur/storybook-project.git');
+      },
+    },
   ]}
 />
 
@@ -36,17 +36,3 @@ O `Loading` é um componente de loading reutilizável usado para ações de Load
 Parâmetros disponíveis para personalizar o componente.
 
 <ArgTypes of={LoadingStories} />
-
-Principais mudanças:
-
-- Removido import e definição do tipo Story do arquivo Loading.stories, já que não é necessário para a documentação.
-
-- Usado component em vez de of na definição do Meta, e especificado o tipo do componente como Loading.
-
-- Simplificado o exemplo para ficar dentro do bloco de código.
-
-- Adicionado uma quebra de linha entre o título e o exemplo para melhorar a legibilidade.
-
-- Usado o bloco ArgTypes para listar os parâmetros do componente, em vez de definir manualmente.
-
-- Isso permite que as propriedades do componente sejam atualizadas automaticamente, sem precisar de uma atualização manual no MDX.
