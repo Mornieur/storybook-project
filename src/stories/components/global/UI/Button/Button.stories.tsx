@@ -9,7 +9,7 @@ import { within, userEvent } from '@storybook/testing-library';
 import React, { useEffect } from 'react';
 import { themeBtnTest } from '../../../../styles/index';
 
-const button: Meta<typeof Button> = {
+const button = {
   title: 'Global/components/Button',
   component: Button,
   argTypes: {
@@ -82,8 +82,9 @@ const button: Meta<typeof Button> = {
     children: 'Default',
     theme: 'primary',
   },
-};
+} satisfies Meta<typeof Button>;
 export default button;
+
 type Story = StoryObj<typeof Button>;
 
 export const Primary: Story = {

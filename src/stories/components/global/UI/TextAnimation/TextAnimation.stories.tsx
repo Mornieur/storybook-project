@@ -6,7 +6,7 @@ import { within } from '@storybook/testing-library';
 import { expect } from '@storybook/jest';
 import { globalViewports } from '../../../../styles/index';
 
-const meta: Meta<typeof TextAnimation> = {
+const meta = {
   title: 'Global/components/TextAnimation',
   decorators: [
     (Story) => {
@@ -44,7 +44,7 @@ const meta: Meta<typeof TextAnimation> = {
       },
     ],
   },
-};
+} satisfies Meta<typeof TextAnimation>;
 
 export default meta;
 

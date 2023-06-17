@@ -43,7 +43,7 @@ const customViewports = {
   },
 };
 
-const meta: Meta<typeof Loading> = {
+const meta = {
   title: 'Global/components/Loading',
   decorators: [
     (Story) => {
@@ -117,7 +117,7 @@ const meta: Meta<typeof Loading> = {
       },
     ],
   },
-};
+} satisfies Meta<typeof Loading>;
 
 export default meta;
 
