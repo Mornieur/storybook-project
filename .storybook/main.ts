@@ -4,7 +4,15 @@ import 'storybook-vscode-component/register';
 
 const config: StorybookConfig = {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
-
+  typescript: {
+    check: true,
+    reactDocgen: 'react-docgen-typescript',
+    reactDocgenTypescriptOptions: {
+      shouldExtractLiteralValuesFromEnum: true,
+      propFilter: (prop) =>
+        prop.parent ? !/node_modules/.test(prop.parent.fileName) : true,
+    },
+  },
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
@@ -81,9 +89,10 @@ const config: StorybookConfig = {
   features: {
     storyStoreV7: true,
   },
-  // env: (config) => ({
-  //   ...config,
-  //   API_HOMOLOG: "testt",
-  // }),
+  logLevel: 'debug',
 };
 export default config;
+
+export const previewAnnotations: StorybookConfig['previewAnnotations'] = (
+  entry = []
+) => [...entry, require.resolve('@storybook/nextjs/preview.js')];
