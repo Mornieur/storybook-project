@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import * as S from './style';
+import * as S from './styles';
 
 interface ITextAnimation {
   type: 'title' | 'text';
