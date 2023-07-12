@@ -49,6 +49,3 @@ A aplicação demonstra um componente de loading e diversos botões, com o intui
 4. Faça push para o branch: `git push origin minha-feature`.
 5. Abra um pull request para o repositório original.
 
-## Licença
-
-Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE.md](LICENSE.md) para mais detalhes.
