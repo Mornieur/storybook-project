@@ -78,11 +78,6 @@ const preview: Preview = {
     },
   },
   parameters: {
-    // storySource: {
-    //   repository: "https://github.com/Mornieur/storybook-project",
-    //   workingDir: wd || "/Usr/vilva/Desktop/project-name",
-    //   branch: "main",
-    // },
     docs: {
       page: () => (
         <>
@@ -94,7 +89,6 @@ const preview: Preview = {
           <Stories />
         </>
       ),
-      // theme: themes.dark,
     },
     msw: {
       handlers: {
@@ -116,16 +110,6 @@ const preview: Preview = {
         ],
       },
     },
-    // storySortV6: (a, b) => (
-    //   a[1].kind === b[1].kind
-    //     ? 0
-    //     : a[1].id.localeCompare(b[1].id, undefined, { numeric: true });
-    // ),
-    // storySortV7: (a, b) => (
-    //   a.title === b.title
-    //     ? 0
-    //     : a.id.localeCompare(b.id, undefined, { numeric: true });
-    // ),
     storySort: {
       order: ["Examples", "Docs", "Demo"],
     },
@@ -188,22 +172,15 @@ export const InputWithoutAutofill = () => <input type="text" />;
 
 InputWithoutAutofill.parameters = {
   a11y: {
-    // Avoid doing this, as it will fully disable all accessibility checks for this story.
     disable: true,
 
-    // Instead, override rules 👇
-    // axe-core configurationOptions (https://github.com/dequelabs/axe-core/blob/develop/doc/API.md#parameters-1)
     config: {
       rules: [
         {
-          // You can exclude some elements from failing a specific rule:
           id: "autocomplete-valid",
           selector: '*:not([autocomplete="nope"])',
         },
         {
-          // You can also signify that a violation will need to be fixed in the future
-          // by overriding the result of a rule to return "Needs Review"
-          // rather than "Violation" if the rule fails:
           id: "landmark-complementary-is-top-level",
           reviewOnFail: true,
         },
