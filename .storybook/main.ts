@@ -35,20 +35,10 @@ const config: StorybookConfig = {
     'storybook-css-modules',
     'storybook-addon-jarle-monaco',
     'storybook-addon-swc',
-    // "@whitespace/storybook-addon-html",
-    // "storybook-addon-root-attribute/register",
-    // "storybook-addon-custom-event-broadcaster/dist",
-    //"storybook-vscode-component/register",
-    // "@geometricpanda/storybook-addon-iframe",
-
-    //'@bbbtech/storybook-formik/register'
-    // "@storybook/addon-google-analytics",
-    // "storybook-addon-live-examples",
     {
       name: '@storybook/addon-storysource',
       options: {
         rule: {
-          // test: [/\.stories\.jsx?$/], This is default
           include: [path.resolve(__dirname, '../src')],
         },
         loaderOptions: {
