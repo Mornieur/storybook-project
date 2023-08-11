@@ -1,16 +1,15 @@
-// jest.config.mjs
-import nextJest from "next/jest.js";
+import nextJest from 'next/jest.js';
 
 const createJestConfig = nextJest({
-  dir: "./",
+  dir: './',
 });
 
 /** @type {import('jest').Config} */
 const config = {
-  testEnvironment: "jest-environment-jsdom",
+  testEnvironment: 'jest-environment-jsdom',
   transform: {
-    "^.+\\.[tj]sx?$": "babel-jest",
-    "^.+\\.mdx?$": "@storybook/addon-docs/jest-transform-mdx",
+    '^.+\\.[tj]sx?$': 'babel-jest',
+    '^.+\\.mdx?$': '@storybook/addon-docs/jest-transform-mdx',
   },
 };
 
